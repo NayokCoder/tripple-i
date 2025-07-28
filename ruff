@@ -1,0 +1,27 @@
+ <ul className="flex flex-col rounded-lg border p-4 font-medium md:flex-row md:border-0 md:p-0 dark:bg-gray-800 md:dark:bg-gray-900">
+            {Links.map((link) => (
+              <li key={link.name} className="relative group">
+                {link.children ? (
+                  <>
+                    <button className="flex items-center gap-1 rounded-md px-1 py-2 text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-400">
+                      {link.icon}
+                      {link.name}
+                    </button>
+                    <ul className="absolute left-0 top-full z-10 hidden w-48 space-y-1 rounded-md bg-white p-2 shadow-md group-hover:block dark:bg-gray-700">
+                      {link.children.map((child) => (
+                        <li key={child.name}>
+                          <Link href={child.path} className="flex items-center gap-2 rounded px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">
+                            {child.icon} {child.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <Link href={link.path} className="flex items-center gap-2 px-3 py-2 text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-400">
+                    {link.icon} {link.name}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
