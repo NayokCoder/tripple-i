@@ -33,7 +33,7 @@ const Banner = () => {
         </div>
 
         <div>
-          <Image src="/mission.jpg" alt="Working professionals" width={600} height={400} className="rounded-xl" />
+          <Image src="/asset/austin-distel-mpN7xjKQ_Ns-unsplash.jpg" alt="Working professionals" width={600} height={400} className="rounded-xl" />
         </div>
       </section>
     </main>
