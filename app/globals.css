@@ -3,6 +3,6 @@
 
 @layer utilities {
   .custom-button {
-    @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-xl;
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-2 px-4 rounded-xl;
   }
 }

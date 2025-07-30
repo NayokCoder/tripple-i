@@ -55,15 +55,15 @@ const AnimatedImage = () => {
 
 const Banner2 = () => {
   return (
-    <section className="relative bg-[#f6f7fb] py-32 px-6 overflow-hidden">
+    <section className="relative h-screen bg-[#f6f7fb] border-b-2 border-gray-200 py-32 px-6 overflow-hidden">
       {/* Background shape */}
       <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-blue-200 rounded-full opacity-20 z-0"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1  md:grid-cols-2 gap-12 items-center">
         {/* Left Section */}
         <div>
           <motion.h1
-            className="text-4xl md:text-6xl font-bold text-[#0e1628] leading-tight mb-4"
+            className="text-4xl md:text-6xl font-bold text-[#0e1628] leading-tight py-4"
             initial="hidden"
             animate="visible"
             variants={{
@@ -75,60 +75,49 @@ const Banner2 = () => {
               },
             }}
           >
-            <SplitText text="Grow your business" />
+            <SplitText text="Empower your vision" />
             <br />
-            <span className="text-blue-600">
-              <SplitText text="with the world’s #1" />
+            <span className="">
+              <SplitText text="with the smartest IT" />
             </span>
             <br />
-            <SplitText text="tools for Joomla!" />
+            <SplitText text="solutions by " />
+            <span className="text-blue-600">
+              <SplitText text="Triple-I" />
+            </span>
           </motion.h1>
 
           <motion.p className="text-gray-500 text-lg mt-6" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 1.2, duration: 0.5 }} viewport={{ once: true }}>
             Easily build websites, landing pages, pop-ups, alert bars, and beyond.
           </motion.p>
 
-          <motion.button 
+          <motion.button
             className="mt-8 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl shadow-lg overflow-hidden relative group"
-            whileHover={{ 
+            whileHover={{
               scale: 1.02,
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-              y: -2
+              y: -2,
             }}
-            whileTap={{ 
+            whileTap={{
               scale: 0.98,
-              y: 0
+              y: 0,
             }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ 
+            transition={{
               delay: 1.5,
               type: "spring",
               stiffness: 300,
-              damping: 20
+              damping: 20,
             }}
           >
-            <motion.span 
-              className="relative z-10 flex items-center gap-2"
-              initial={{ x: 0 }}
-              whileHover={{ x: 4 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            >
-              Get Started Now 
-              <motion.span
-                initial={{ x: 0 }}
-                whileHover={{ x: 8 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              >
+            <motion.span className="relative z-10 flex items-center gap-2" initial={{ x: 0 }} whileHover={{ x: 4 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
+              Get Started Now
+              <motion.span initial={{ x: 0 }} whileHover={{ x: 8 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
                 →
               </motion.span>
             </motion.span>
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            />
+            <motion.div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800" initial={{ x: "-100%" }} whileHover={{ x: 0 }} transition={{ type: "spring", stiffness: 300, damping: 30 }} />
           </motion.button>
         </div>
 
@@ -138,7 +127,7 @@ const Banner2 = () => {
 
           {/* Floating Product Card */}
           <motion.div className="absolute bottom-[-150px] left-24 bg-white border-2 border-blue-100 shadow-md rounded-lg max-w-44 z-10" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.5 }} viewport={{ once: false }}>
-            <Image src="/bannerImage/3d-rendering-vibrant-neon-cactus-desert.jpg" alt="Product" width={176} height={300} className="rounded h-40 object-cover" />
+            <Image src="/bannerImage/3d-rendering-vibrant-neon-cactus-desert.jpg" alt="Product" width={176} height={250} className="rounded h-40 object-cover" />
             <div className="p-3">
               <p className="text-sm mt-2 font-bold">Terra Craft</p>
               <p className="text-sm text-gray-700">
@@ -151,7 +140,7 @@ const Banner2 = () => {
       </div>
 
       {/* Optional Lottie Animation */}
-      <Lottie animationData={dragAnimation} loop className="absolute bottom-20 right-50 opacity-70 z-0" />
+      <Lottie animationData={dragAnimation} className="absolute bottom-5/12 right-50 opacity-70 z-0" />
     </section>
   );
 };

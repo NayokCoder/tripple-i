@@ -3,6 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { Home, Briefcase, Code, ClipboardList, BookOpen, Mic, FileText, Users } from "lucide-react";
+import Lottie from "lottie-react";
+import Logo from "../../../../animations/Logo-2-[remix].json";
 
 const Navbar = () => {
   const Links = [
@@ -60,8 +62,8 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-          <Link href="/" className="btn btn-ghost text-xl">
-            Triple-I
+          <Link href="/" className="">
+            <Lottie animationData={Logo} loop={false} className=" w-32" />
           </Link>
         </div>
 
