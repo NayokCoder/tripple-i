@@ -48,7 +48,7 @@ const AnimatedImage = () => {
 
   return (
     <motion.div ref={ref} animate={controls} initial={{ x: -150, opacity: 0, scale: 1 }} className="relative  rounded-xl shadow-lg overflow-hidden">
-      <Image src="/asset/campaign-creators-qCi_MzVODoU-unsplash.jpg" alt="Editor" width={500} height={350} className="object-cover rounded" />
+      <Image src="https://i.ibb.co/hRYnrbv0/campaign-creators-q-Ci-Mz-VODo-U-unsplash.jpg" alt="Editor" width={500} height={350} className="object-cover rounded" />
     </motion.div>
   );
 };
@@ -127,7 +127,7 @@ const Banner2 = () => {
 
           {/* Floating Product Card */}
           <motion.div className="absolute bottom-[-150px] left-24 bg-white border-2 border-blue-100 shadow-md rounded-lg max-w-44 z-10" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.5 }} viewport={{ once: false }}>
-            <Image src="/bannerImage/3d-rendering-vibrant-neon-cactus-desert.jpg" alt="Product" width={176} height={250} className="rounded h-40 object-cover" />
+            <Image src="https://i.ibb.co/Qv8qx25g/3d-rendering-vibrant-neon-cactus-desert.jpg" alt="Product" width={176} height={250} className="rounded h-40 object-cover" />
             <div className="p-3">
               <p className="text-sm mt-2 font-bold">Terra Craft</p>
               <p className="text-sm text-gray-700">
