@@ -1,12 +1,14 @@
 // Banner2.jsx
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Lottie from "lottie-react";
 import dragAnimation from "../../../animations/VFUdfdWyzW.json";
-import worldwide from "../../../animations/worldwide-team.json";
+import AnimatedImage from "@/app/Utils/AnimatedImage";
+import Marquee from "react-fast-marquee";
+import SponsorsMarquee from "@/app/Utils/SponsorsMarquee";
 
 // Animation variants for cleaner code
 const wordVariant = {
@@ -50,49 +52,12 @@ const SplitText = ({ text }) => {
   );
 };
 
-const AnimatedImage = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start({
-        x: 0,
-        scale: 0.85,
-        delay: 1,
-        opacity: 1,
-        transition: {
-          duration: 1.5,
-          ease: [0.16, 1, 0.3, 1],
-          type: "tween",
-        },
-      });
-    }
-  }, [inView, controls]);
-
-  return (
-    <motion.div ref={ref} animate={controls} initial={{ x: -120, opacity: 0, scale: 0.95 }} className="relative rounded-xl  overflow-hidden">
-      <Image
-        src="/campaign-creators-qCi_MzVODoU-unsplash.jpg"
-        alt="Editor workspace"
-        width={500}
-        height={350}
-        className="object-cover rounded"
-        priority
-        unoptimized // If from external domain
-      />
-
-      {/* <Lottie animationData={worldwide} className=" w-full h-full" /> */}
-    </motion.div>
-  );
-};
-
 const Banner2 = () => {
   return (
     <section className="relative h-screen bg-[#f6f7fb] border-b-2 border-gray-200 py-32 px-6 overflow-hidden">
-      <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-blue-200 rounded-full opacity-20 z-0"></div>
+      <div className="relative z-10 max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* <div className="absolute -top-4/5 left-2 w-[500px] h-[500px] bg-blue-200 rounded-full opacity-20 z-0"></div> */}
 
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Side */}
         <div>
           <h1 className="text-4xl md:text-6xl font-bold text-[#0e1628] leading-tight py-4">
@@ -141,8 +106,9 @@ const Banner2 = () => {
       </div>
 
       {/* Optional Lottie */}
-      {/* <Lottie animationData={dragAnimation} className="absolute bottom-5/12 right-50 opacity-70 z-0" /> */}
-      <div className="absolute top-24 -right-52 w-96 h-96 bg-blue-200 rounded-full opacity-20 z-0"></div>
+      <Lottie animationData={dragAnimation} className="absolute bottom-5/12 right-50 opacity-70 z-0" />
+      {/* <div className="absolute top-24 -right-52 w-96 h-96 bg-blue-200 rounded-full opacity-20 z-0"></div> */}
+      <SponsorsMarquee />
     </section>
   );
 };
